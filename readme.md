@@ -37,7 +37,7 @@ project/
 
 ### 1. 数据下载
 
-- 使用 `simple-dan-crawl.py` 从指定 API 下载图像和标签(标签不会下载角色名和画师名，请注意，只会带有年龄分级的tag和普通描述tag)。
+- 使用 `simple-dan-crawl.py` 从 danbooru 简单爬取图像和标签(标签不会下载角色名和画师名，请注意，只会带有年龄分级的tag和普通描述tag)。
 - 示例命令：
 
 * 默认下载 10 张图片到 **dataset/** 目录，可修改脚本中的 **target_count** 参数调整数量。
