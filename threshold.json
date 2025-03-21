@@ -1,0 +1,7 @@
+{
+    "general_threshold": 0.40,
+    "character_threshold": 0.80,
+    "artist_threshold": 0.70,
+    "caption_threshold": 0.40,
+    "tags_threshold": 0.45
+  }
