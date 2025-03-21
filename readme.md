@@ -1,12 +1,12 @@
 # EVA-02 Large 图像标签模型
 
-这是一个基于 PyTorch 和 TensorFlow 的图像标签项目，使用 EVA-02 Large Transformer 模型对图像进行多标签分类。项目包括数据下载、预处理、模型训练和推理功能，支持通过 `threshold.json` 自定义推理时的标签输出阈值。
+这是一个高性能的基于 PyTorch 和 TensorFlow 的图像标签项目，使用 EVA-02 Large Transformer 模型对图像进行多标签分类。项目包括数据下载、预处理、模型训练和推理功能，支持通过 `threshold.json` 自定义推理时的标签输出阈值。
 
-项目启发自[SmilingWolf · GitHub](https://github.com/SmilingWolf) 这个版本是一个高性能的结合pytorch和tensorflow的训练脚本，且增加了artist栏目，为画师串反推打好框架基础
+项目启发自[SmilingWolf · GitHub](https://github.com/SmilingWolf) 这个版本增加了artist栏目，为画师串反推打好框架基础
 
 ## 项目功能
 
-1. **数据下载**：从指定 API 下载图像及其标签。
+1. **数据下载**：从 danbooru 简单爬取图像及其标签。
 2. **数据预处理**：将图像和标签转换为 TFRecord 格式，并更新标签 CSV。
 3. **模型训练**：使用 EVA-02 Large 模型进行训练，支持早停和检查点保存。
 4. **推理**：对单张图像进行标签预测，输出分类标签和置信度，可通过 `threshold.json` 调控输出阈值。
