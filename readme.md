@@ -20,6 +20,18 @@
 pip install torch torchvision tensorflow pillow pandas numpy tqdm httpx
 ```
 
+如果想要可视化界面，需要
+
+```
+pip install gradio
+```
+
+然后运行
+
+```
+python app.py
+```
+
 ## 目录结构
 
 ```
@@ -59,9 +71,10 @@ project/
 
 * 如果没有初始的 **selected_tags.csv**，运行以下命令生成，但是只能定位为普通类标签，艺术家或角色名需要自己改类别：
 
- ```
+```
  python generate_selected_tags.py --dataset-folder ./dataset --output-csv ./selected_tags.csv
 ```
+
 * 输出示例（**selected_tags.csv**）：
 
   ```
@@ -113,9 +126,10 @@ project/
 
 * 运行以下命令将数据集转换为 TFRecord 格式，并更新 **selected_tags.csv**：
 
- ```
+```
  python create_tfrecord.py --dataset-folder ./dataset --output-path ./output-datasets --split-ratio 0.7 --img-size 224
 ```
+
 * 参数说明：
 
   * **--dataset-folder**: 数据集路径
@@ -133,7 +147,7 @@ project/
 
 * 如果 **.txt** 文件中标签存在空格分隔，运行以下命令替换为逗号，这是为了兼容danbooru的下划线当空格格式：
 
- ```
+```
  python replace_blanks.py
 ```
 
@@ -141,9 +155,10 @@ project/
 
 * 运行以下命令训练 EVA-02 Large 模型：
 
- ```
+```
  python train_pytorch.py --dataset_root ./output-datasets --output_dir ./checkpoints
 ```
+
 * 参数说明：
 
   * **--dataset_root**: TFRecord 文件路径
