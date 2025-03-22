@@ -32,7 +32,7 @@ def generate_selected_tags(dataset_folder, output_csv):
         "general": 9, "sensitive": 9, "questionable": 9, "explicit": 9,
         "1girl": 0, "1boy": 0, "whiskey": 0, "eyepatch": 0, "playboy_bunny": 0, "sword": 0,
         "m16a1_(girls'_frontline)": 4, "guts_(berserk)": 4,
-        "artist_name_1": 5, "artist_name_2": 5
+        "artist_name_1": 1, "artist_name_2": 1
     }
 
     output_csv = Path(output_csv)

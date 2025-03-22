@@ -100,7 +100,7 @@ project/
    * **guts_(berserk)**（《剑风传奇》中的加斯）
    * **用途** : 在推理时受 **character_threshold** 控制，用于识别图像中的具体角色。
 4. **Artist 标签（艺术家标签）**
-   * **category 值** : **5**
+   * **category 值** : 1
    * **描述** : 表示图像的创作者或艺术家的标签。
    * **示例标签** :
    * **artist_name_1**

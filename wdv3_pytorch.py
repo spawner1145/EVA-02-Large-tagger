@@ -63,7 +63,7 @@ def load_labels_local(csv_path: str) -> LabelData:
         rating=list(np.where(df["category"] == 9)[0]),
         general=list(np.where(df["category"] == 0)[0]),
         character=list(np.where(df["category"] == 4)[0]),
-        artist=list(np.where(df["category"] == 5)[0]),
+        artist=list(np.where(df["category"] == 1)[0]),
     )
     return tag_data
 
