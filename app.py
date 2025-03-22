@@ -346,7 +346,7 @@ with gr.Blocks() as demo:
         target_count = gr.Number(label="下载图片数量", value=10, precision=0)
         output_dir = gr.Textbox(label="输出目录", value="./dataset", placeholder="请输入相对路径（如 ./dataset）或绝对路径")
         download_btn = gr.Button("开始下载")
-        download_output = gr.Textbox(label="输出日志", lines=10, max_lines=20)
+        download_output = gr.Textbox(label="输出日志", lines=10, max_lines=10)
         download_btn.click(
             fn=download_data,
             inputs=[target_count, output_dir],
@@ -361,7 +361,7 @@ with gr.Blocks() as demo:
             gen_tags_dataset_folder = gr.Textbox(label="数据集目录", value="./dataset", placeholder="请输入相对路径（如 ./dataset）或绝对路径")
             gen_tags_output_csv = gr.Textbox(label="输出 CSV 路径", value="./selected_tags.csv", placeholder="请输入相对路径（如 ./selected_tags.csv）或绝对路径")
             gen_tags_btn = gr.Button("生成 selected_tags.csv")
-            gen_tags_output = gr.Textbox(label="输出日志", lines=10, max_lines=20)
+            gen_tags_output = gr.Textbox(label="输出日志", lines=10, max_lines=10)
             gen_tags_btn.click(
                 fn=generate_tags,
                 inputs=[gen_tags_dataset_folder, gen_tags_output_csv],
@@ -372,7 +372,7 @@ with gr.Blocks() as demo:
             gr.Markdown("#### 2. 清理 txt 文件（将空格替换为逗号）（非必须）")
             replace_blanks_folder = gr.Textbox(label="数据集目录", value="./dataset", placeholder="请输入相对路径（如 ./dataset）或绝对路径")
             replace_blanks_btn = gr.Button("清理 txt 文件")
-            replace_blanks_output = gr.Textbox(label="输出日志", lines=10, max_lines=20)
+            replace_blanks_output = gr.Textbox(label="输出日志", lines=10, max_lines=10)
             replace_blanks_btn.click(
                 fn=replace_blanks,
                 inputs=replace_blanks_folder,
@@ -387,7 +387,7 @@ with gr.Blocks() as demo:
             tfrecord_img_size = gr.Number(label="图像尺寸", value=224, precision=0)
             tfrecord_tags_csv = gr.Textbox(label="Tags CSV 路径", value="./selected_tags.csv", placeholder="请输入相对路径（如 ./selected_tags.csv）或绝对路径")
             tfrecord_btn = gr.Button("转换为 TFRecord")
-            tfrecord_output = gr.Textbox(label="输出日志", lines=10, max_lines=20)
+            tfrecord_output = gr.Textbox(label="输出日志", lines=10, max_lines=10)
             tfrecord_btn.click(
                 fn=create_tfrecord,
                 inputs=[tfrecord_dataset_folder, tfrecord_output_path, tfrecord_split_ratio, tfrecord_img_size, tfrecord_tags_csv],
@@ -403,7 +403,7 @@ with gr.Blocks() as demo:
         train_epochs = gr.Number(label="训练轮数", value=10, precision=0)
         train_lr = gr.Number(label="学习率", value=1e-4, precision=6)
         train_btn = gr.Button("开始训练")
-        train_output = gr.Textbox(label="输出日志", lines=10, max_lines=20)
+        train_output = gr.Textbox(label="输出日志", lines=10, max_lines=10)
         train_btn.click(
             fn=train_model,
             inputs=[train_dataset_root, train_output_dir, train_image_size, train_batch_size, train_epochs, train_lr],
@@ -425,7 +425,7 @@ with gr.Blocks() as demo:
             inference_caption_threshold = gr.Number(label="Caption 阈值", value=None, precision=2)
             inference_tags_threshold = gr.Number(label="Tags 阈值", value=None, precision=2)
         inference_btn = gr.Button("运行推理")
-        inference_output = gr.Textbox(label="推理结果", lines=10, max_lines=20)
+        inference_output = gr.Textbox(label="推理结果", lines=10, max_lines=10)
         inference_btn.click(
             fn=run_inference,
             inputs=[
