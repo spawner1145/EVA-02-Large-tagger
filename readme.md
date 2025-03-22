@@ -16,7 +16,9 @@
 - **Python**: 3.8+
 - **依赖库**：
 
-```pip install torch torchvision tensorflow pillow pandas numpy tqdm httpx```
+```
+pip install torch torchvision tensorflow pillow pandas numpy tqdm httpx
+```
 
 ## 目录结构
 
@@ -57,7 +59,9 @@ project/
 
 * 如果没有初始的 **selected_tags.csv**，运行以下命令生成，但是只能定位为普通类标签，艺术家或角色名需要自己改类别：
 
- ```python generate_selected_tags.py --dataset-folder ./dataset --output-csv ./selected_tags.csv```
+ ```
+ python generate_selected_tags.py --dataset-folder ./dataset --output-csv ./selected_tags.csv
+```
 * 输出示例（**selected_tags.csv**）：
 
   ```
@@ -109,7 +113,9 @@ project/
 
 * 运行以下命令将数据集转换为 TFRecord 格式，并更新 **selected_tags.csv**：
 
- ```python create_tfrecord.py --dataset-folder ./dataset --output-path ./output-datasets --split-ratio 0.7 --img-size 224```
+ ```
+ python create_tfrecord.py --dataset-folder ./dataset --output-path ./output-datasets --split-ratio 0.7 --img-size 224
+```
 * 参数说明：
 
   * **--dataset-folder**: 数据集路径
@@ -127,13 +133,17 @@ project/
 
 * 如果 **.txt** 文件中标签存在空格分隔，运行以下命令替换为逗号，这是为了兼容danbooru的下划线当空格格式：
 
- ```python replace_blanks.py```
+ ```
+ python replace_blanks.py
+```
 
 ### 3. 训练模型
 
 * 运行以下命令训练 EVA-02 Large 模型：
 
- ```python train_pytorch.py --dataset_root ./output-datasets --output_dir ./checkpoints```
+ ```
+ python train_pytorch.py --dataset_root ./output-datasets --output_dir ./checkpoints
+```
 * 参数说明：
 
   * **--dataset_root**: TFRecord 文件路径
@@ -173,7 +183,9 @@ project/
 
 * 使用训练好的模型对图像进行标签预测：
 
-  ```python wdv3_pytorch.py --image_file ./test.png --model_path ./checkpoints/eva02_large_epoch_10.pth --config_path ./checkpoints/config.json --tags_csv ./selected_tags.csv```
+  ```
+  python wdv3_pytorch.py --image_file ./test.png --model_path ./checkpoints/eva02_large_epoch_10.pth --config_path ./checkpoints/config.json --tags_csv ./selected_tags.csv
+  ```
 * 参数说明：
 
   * **--image_file**: 输入图像路径
@@ -189,10 +201,14 @@ project/
     * **--tags_threshold**: Tags 阈值
 * 示例（使用默认 **threshold.json**）：
 
-  ```python wdv3_pytorch.py --image_file ./test.png --model_path ./checkpoints/eva02_large_epoch_10.pth --config_path ./checkpoints/config.json --tags_csv ./selected_tags.csv```
+  ```
+  python wdv3_pytorch.py --image_file ./test.png --model_path ./checkpoints/eva02_large_epoch_10.pth --config_path ./checkpoints/config.json --tags_csv ./selected_tags.csv
+  ```
 * 示例（覆盖部分阈值）：
 
-  ```python wdv3_pytorch.py --image_file ./test.png --model_path ./checkpoints/eva02_large_epoch_10.pth --config_path ./checkpoints/config.json --tags_csv ./selected_tags.csv --gen_threshold 0.50 --char_threshold 0.85```
+  ```
+  python wdv3_pytorch.py --image_file ./test.png --model_path ./checkpoints/eva02_large_epoch_10.pth --config_path ./checkpoints/config.json --tags_csv ./selected_tags.csv --gen_threshold 0.50 --char_threshold 0.85
+  ```
 * 输出示例：
 
   ```
