@@ -259,6 +259,12 @@ project/
 * 若 **threshold.json** 缺失，默认使用 0.35（通用/标题/标签）和 0.75（角色/艺术家）。
 * 命令行参数优先级高于 **threshold.json**。
 
+## 微调训练
+
+```
+python retrain_pytorch.py --dataset_root /path/to/your/dataset --resume_checkpoint /path/to/your/eva02_large_best.pth --output_dir ./my_retrained_models --epochs 5 --batch_size 16 --lr 5e-6
+```
+
 ## 常见问题
 
 * **Q：TFRecord 文件生成失败？**
